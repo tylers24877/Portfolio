@@ -1,0 +1,17 @@
+@import "./theme/dark.scss";
+@import "./theme/light.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Just Another Hand", cursive;
+    line-height: 1.5;
+    @apply text-on-surface;
+  }
+}
+body {
+  @apply bg-surface;
+}
