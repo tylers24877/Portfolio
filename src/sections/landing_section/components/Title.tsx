@@ -3,7 +3,7 @@ import { Fragment } from "react/jsx-runtime";
 export const Title = () => {
   return (
     <Fragment>
-      <div className="relative justify-center items-center">
+      <div className="relative mx-auto w-fit">
         <div className="">
           <div className="text-[100px] leading-none">Hi,</div>
         </div>
@@ -12,9 +12,7 @@ export const Title = () => {
             {"> A Software Developer"}
           </div>
         </div>
-        <div className="text-[100px] leading-none">
-          I'm Tyler
-        </div>
+        <div className="text-[100px] leading-none">I'm Tyler</div>
       </div>
     </Fragment>
   );
