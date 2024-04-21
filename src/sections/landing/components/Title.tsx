@@ -1,5 +1,8 @@
 import { Fragment } from "react/jsx-runtime";
 
+/**
+ * Renders the title component for the landing section.
+ */
 export const Title = () => {
   return (
     <Fragment>

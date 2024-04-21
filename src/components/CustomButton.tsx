@@ -21,7 +21,6 @@ export const CustomButton = (props: CustomButtonProps) => {
         transition-all
         duration-300
         ease-in-out
-        
         "
       >
         {children}

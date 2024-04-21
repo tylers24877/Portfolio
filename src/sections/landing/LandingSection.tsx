@@ -4,6 +4,9 @@ import { CustomButton } from "../../components/CustomButton";
 import { ArrowDown } from "../../components/icons/ArrowDown";
 import { Links } from "./components/Links";
 
+/**
+ * Renders the left section of the landing page.
+ */
 const LeftSection = () => {
   return (
     <Fragment>
@@ -15,6 +18,9 @@ const LeftSection = () => {
   );
 };
 
+/**
+ * Renders the right section of the landing page.
+ */
 const RightSection = () => {
   return (
     <Fragment>
@@ -33,12 +39,17 @@ const RightSection = () => {
         </div>
         <div className="row-start-11 text-center">
           <div className="pb-1 text-lg">Scroll to find out more</div>
-          <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary hover:brightness-125 hover:drop-shadow-lg" />
+
+          <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary" />
         </div>
       </div>
     </Fragment>
   );
 };
+
+/**
+ * Renders the landing section of the portfolio page.
+ */
 export const LandingSection = () => {
   return (
     <Fragment>

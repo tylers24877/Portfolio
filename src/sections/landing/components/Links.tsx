@@ -1,6 +1,9 @@
 import { Fragment } from "react/jsx-runtime";
 import { DarkModeSwitch } from "./DarkModeSwitch/DarkModeSwitch";
 
+/**
+ * Renders a list of social links and a dark mode switch.
+ */
 export const Links = () => {
   const socialLinks = [
     ["GitHub", "https://github.com/tylers24877"],

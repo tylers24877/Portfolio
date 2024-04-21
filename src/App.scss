@@ -9,9 +9,7 @@
   body {
     font-family: "Just Another Hand", cursive;
     line-height: 1.5;
+    @apply bg-surface;
     @apply text-on-surface;
   }
-}
-body {
-  @apply bg-surface;
 }
