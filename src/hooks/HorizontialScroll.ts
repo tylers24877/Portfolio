@@ -6,11 +6,12 @@ export function useHorizontalScroll() {
     const el = elRef.current as HTMLElement;
     if (el) {
       const onWheel = (e) => {
-        e.preventDefault();
-
-        el.scrollBy({
-          left: e.deltaY < 0 ? -30 : 30,
-        });
+        if (el.scrollWidth > el.clientWidth) {
+          e.preventDefault();
+          el.scrollBy({
+            left: e.deltaY < 0 ? -30 : 30,
+          });
+        }
       };
       el.addEventListener("wheel", onWheel);
       return () => el.removeEventListener("wheel", onWheel);

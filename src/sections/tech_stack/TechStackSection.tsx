@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import { TechStackTopSwirl } from "../../components/TechStackTopSwirl";
+import { TechStackTopSwirl } from "../../components/swirls/TechStackTopSwirl";
 import { Card } from "./components/Card";
 import { ReactIcon } from "../../components/icons/tech_stack/ReactIcon";
 import { ReactNode } from "react";
@@ -7,7 +7,7 @@ import { TypeScriptIcon } from "../../components/icons/tech_stack/TypeScriptIcon
 import { KotlinIcon } from "../../components/icons/tech_stack/KotlinIcon";
 import { PythonIcon } from "../../components/icons/tech_stack/PythonIcon";
 import { AWSIcon } from "../../components/icons/tech_stack/AWSIcon";
-import { TechStackBottomSwirl } from "../../components/TechStackBottomSwirl";
+import { TechStackBottomSwirl } from "../../components/swirls/TechStackBottomSwirl";
 import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
 
 const SwirlTop = () => {
@@ -50,7 +50,7 @@ const Cards = () => {
   return (
     <div
       ref={ref}
-      className="overflow-scroll whitespace-nowrap py-5 text-center"
+      className="overflow-auto whitespace-nowrap py-5 text-center"
     >
       {techStacks.map(([techName, icon], index) => (
         <div className="mx-auto inline-block px-2" key={index}>

@@ -1,12 +1,21 @@
 import { Fragment } from "react/jsx-runtime";
 import { AboutMeTitle } from "../../components/AboutMeTitle";
+import { AboutMeBottomSwirl } from "../../components/swirls/AboutMeBottomSwirl";
+
+const SwirlBottom = () => {
+  return (
+    <div className="absolute -bottom-24 left-0 z-10 mx-auto w-full">
+      <AboutMeBottomSwirl className="h-32 w-full fill-surface " />
+    </div>
+  );
+};
 
 export const AboutMeSection = () => {
   return (
     <Fragment>
-      <div className="md:mt-55 mt-[105px]">
+      <div className=" md:mt-55 relative mt-[105px] pb-10">
         <div className="flex flex-col px-5 md:flex-row md:px-20">
-          <div className="font-roboto order-2 md:order-1 md:w-7/12 md:pr-4">
+          <div className="order-2 font-roboto md:order-1 md:w-7/12 md:pr-4">
             <AboutMeTitle className="mx-auto h-[100px] w-[170px] fill-on-surface" />
             Welcome to my corner of the web! I'm [Your Name], a passionate and
             innovative web developer with a keen eye for design and a love for
@@ -32,49 +41,6 @@ export const AboutMeSection = () => {
             something extraordinary. Let's connect and turn your ideas into
             reality! Welcome to my corner of the web! I'm [Your Name], a
             passionate and innovative web developer with a keen eye for design
-            and a love for creating captivating digital experiences. Driven by
-            curiosity and fueled by creativity, I thrive on the challenges of
-            turning ideas into reality through code. With [X] years of
-            experience in web development, I've honed my skills in front-end and
-            back-end technologies, mastering languages such as HTML, CSS,
-            JavaScript, and beyond. Beyond just writing lines of code, I'm
-            committed to crafting solutions that not only meet but exceed
-            expectations. Whether it's building responsive and user-friendly
-            interfaces, optimizing website performance, or solving complex
-            technical issues, I'm always eager to push the boundaries of what's
-            possible. Collaboration is at the heart of my approach. I believe
-            that the best results emerge when diverse talents and perspectives
-            come together, and I'm always excited to work alongside fellow
-            developers, designers, and clients to bring visions to life. When
-            I'm not immersed in the world of coding, you can find me exploring
-            the latest trends in technology, experimenting with new tools and
-            frameworks, or seeking inspiration in the world around me. I'm
-            passionate about empowering businesses and individuals through
-            innovative digital solutions, and I'm thrilled at the prospect of
-            collaborating with you to create something extraordinary. Let's
-            connect and turn your ideas into reality! Welcome to my corner of
-            the web! I'm [Your Name], a passionate and innovative web developer
-            with a keen eye for design and a love for creating captivating
-            digital experiences. Driven by curiosity and fueled by creativity, I
-            thrive on the challenges of turning ideas into reality through code.
-            With [X] years of experience in web development, I've honed my
-            skills in front-end and back-end technologies, mastering languages
-            such as HTML, CSS, JavaScript, and beyond. Beyond just writing lines
-            of code, I'm committed to crafting solutions that not only meet but
-            exceed expectations. Whether it's building responsive and
-            user-friendly interfaces, optimizing website performance, or solving
-            complex technical issues, I'm always eager to push the boundaries of
-            what's possible. Collaboration is at the heart of my approach. I
-            believe that the best results emerge when diverse talents and
-            perspectives come together, and I'm always excited to work alongside
-            fellow developers, designers, and clients to bring visions to life.
-            When I'm not immersed in the world of coding, you can find me
-            exploring the latest trends in technology, experimenting with new
-            tools and frameworks, or seeking inspiration in the world around me.
-            I'm passionate about empowering businesses and individuals through
-            innovative digital solutions, and I'm thrilled at the prospect of
-            collaborating with you to create something extraordinary. Let's
-            connect and turn your ideas into reality!
           </div>
           <div className="order-1 flex items-center justify-center max-md:pb-4 md:order-2 md:w-5/12 md:pl-4">
             <img
@@ -84,6 +50,7 @@ export const AboutMeSection = () => {
             />
           </div>
         </div>
+        <SwirlBottom />
       </div>
     </Fragment>
   );
