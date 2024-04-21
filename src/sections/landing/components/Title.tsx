@@ -8,10 +8,12 @@ export const Title = () => {
     <Fragment>
       <div className="relative mx-auto w-fit">
         <div className="">
-          <div className="text-[100px] leading-none">Hi,</div>
+          <div className="text-[100px] leading-none md:-ms-20 lg:text-[150px]">
+            Hi,
+          </div>
         </div>
         <div className="absolute bottom-[-5px] left-2">
-          <div className="text-on-surface text-[22px]">
+          <div className="text-[22px] text-on-surface">
             {"> A Software Developer"}
           </div>
         </div>

@@ -1,8 +1,6 @@
 export const TechStackTopSwirl = (props) => {
   return (
     <svg
-      width="4246.8672"
-      height="760.17926"
       viewBox="0 0 4246.8672 760.17926"
       preserveAspectRatio="none"
       {...props}

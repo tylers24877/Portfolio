@@ -28,16 +28,16 @@ const RightSection = () => {
         <div className="row-start-1 text-center">
           <Links />
         </div>
-        <div className="row-start-4">
+        <div className="row-start-3">
           <Title />
         </div>
-        <div className="row-start-9 text-center">
+        <div className="row-start-8 text-center">
           <CustomButton>Contact Me</CustomButton>
         </div>
-        <div className="row-start-10 text-center">
+        <div className="row-start-9 text-center">
           <div className="pb-1 text-lg">Or</div>
         </div>
-        <div className="row-start-11 text-center">
+        <div className="row-start-10 text-center">
           <div className="pb-1 text-lg">Scroll to find out more</div>
 
           <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary" />
