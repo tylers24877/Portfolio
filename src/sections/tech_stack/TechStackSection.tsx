@@ -9,6 +9,7 @@ import { PythonIcon } from "../../components/icons/tech_stack/PythonIcon";
 import { AWSIcon } from "../../components/icons/tech_stack/AWSIcon";
 import { TechStackBottomSwirl } from "../../components/swirls/TechStackBottomSwirl";
 import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
+import { Transition } from "../../components/Transition";
 
 const SwirlTop = () => {
   return (
@@ -48,10 +49,7 @@ const Cards = () => {
     ["AWS", <AWSIcon className="fill-on-primary" />],
   ];
   return (
-    <div
-      ref={ref}
-      className="overflow-auto whitespace-nowrap py-5 text-center"
-    >
+    <div ref={ref} className="overflow-auto whitespace-nowrap py-5 text-center">
       {techStacks.map(([techName, icon], index) => (
         <div className="mx-auto inline-block px-2" key={index}>
           <Card techName={techName} icon={icon} />
@@ -63,13 +61,17 @@ const Cards = () => {
 
 export const TechStackSection = () => {
   return (
-    <div className="relative bg-surface-variant">
-      <SwirlTop />
-      <div className="relative z-10">
-        <Title />
-        <Cards />
+    <Fragment>
+      <div className="relative bg-surface-variant">
+        <SwirlTop />
+        <div className="relative z-10">
+          <Transition>
+            <Title />
+            <Cards />
+          </Transition>
+        </div>
+        <SwirlBottom />
       </div>
-      <SwirlBottom />
-    </div>
+    </Fragment>
   );
 };

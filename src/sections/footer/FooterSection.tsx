@@ -1,15 +1,33 @@
+import { ReactNode } from "react";
 import { Fragment } from "react/jsx-runtime";
+
+/**
+ * Represents a link in the footer section.
+ */
+const FooterLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) => (
+  <a href={href} className="under underline" target="_blank">
+    {children}
+  </a>
+);
 
 export const FooterSection = () => {
   return (
     <Fragment>
       <div className="flex h-[200px] w-full items-end justify-center bg-secondary pb-8">
         <div className="text-center text-xl tracking-wider text-on-secondary">
-          © Tyler Simmonds 2024.
+          This work is open source on{" "}
+          <FooterLink href="https://github.com/tylers24877">GitHub</FooterLink>{" "}
+          | Built with <FooterLink href="https://react.dev/">React</FooterLink>{" "}
+          and <FooterLink href="https://tailwindcss.com/">Tailwind</FooterLink>
           <br />
-          This work is open source on GitHub | Built with React and Tailwind
-          <br />
-          On the ☁︎ at AWS
+          On the ☁︎ at{" "}
+          <FooterLink href="https://aws.amazon.com/">AWS</FooterLink>
         </div>
       </div>
     </Fragment>

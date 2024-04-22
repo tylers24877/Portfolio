@@ -1,5 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 import { MyProjectsBottomSwirl } from "../../components/swirls/MyProjectsBottomSwirl";
+import { ProjectCard } from "./components/ProjectCard";
 
 const SwirlBottom = () => {
   return (
@@ -11,8 +12,11 @@ const SwirlBottom = () => {
 export const MyProjectsSection = () => {
   return (
     <Fragment>
-      <div className="relative h-[400px] w-full bg-surface-variant">
-        <div>jj</div>
+      <div className="relative w-full bg-surface-variant py-12">
+        <div className="me-8 text-right text-6xl md:me-52 md:text-7xl  xl:me-[250px] 2xl:me-[500px]">
+          My Projects
+        </div>
+        <ProjectCard />
         <SwirlBottom />
       </div>
     </Fragment>

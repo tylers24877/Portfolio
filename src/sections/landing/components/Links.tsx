@@ -7,7 +7,7 @@ import { DarkModeSwitch } from "./DarkModeSwitch/DarkModeSwitch";
 export const Links = () => {
   const socialLinks = [
     ["GitHub", "https://github.com/tylers24877"],
-    ["LinkedIn", "https://www.linkedin.com/in/tyler-schultz-1b1b3b1b3/"],
+    ["LinkedIn", "https://www.linkedin.com/in/tyler-simmonds-327a861a7/"],
     ["CV", "TODO"],
     ["Contact Me", "TODO"],
   ];
@@ -19,7 +19,7 @@ export const Links = () => {
             <a
               href={link}
               target="_blank"
-              className="hover:drop-shadow-md text-lg"
+              className="text-lg hover:drop-shadow-md"
             >
               {name}
             </a>
