@@ -14,14 +14,28 @@
   }
   *::-webkit-scrollbar {
     width: 8px;
+    background-color: transparent;
   }
   *::-webkit-scrollbar-track {
-    background: rgb(var(--md-sys-color-surface));
+    background: transparent;
   }
 
   *::-webkit-scrollbar-thumb {
     background-color: rgb(var(--md-sys-color-primary));
     border-radius: 4px;
     border: 2px solid rgb(var(--md-sys-color-surface));
+  }
+}
+@layer utilities {
+  @variants responsive {
+    .masonry-3-col {
+      column-count: 3;
+    }
+    .masonry-2-col {
+      column-count: 2;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
   }
 }

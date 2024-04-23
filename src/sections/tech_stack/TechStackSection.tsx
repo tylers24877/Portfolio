@@ -1,15 +1,10 @@
 import { Fragment } from "react/jsx-runtime";
 import { TechStackTopSwirl } from "../../components/swirls/TechStackTopSwirl";
 import { Card } from "./components/Card";
-import { ReactIcon } from "../../components/icons/tech_stack/ReactIcon";
-import { ReactNode } from "react";
-import { TypeScriptIcon } from "../../components/icons/tech_stack/TypeScriptIcon";
-import { KotlinIcon } from "../../components/icons/tech_stack/KotlinIcon";
-import { PythonIcon } from "../../components/icons/tech_stack/PythonIcon";
-import { AWSIcon } from "../../components/icons/tech_stack/AWSIcon";
 import { TechStackBottomSwirl } from "../../components/swirls/TechStackBottomSwirl";
 import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
-import { Transition } from "../../components/Transition";
+import { Fade } from "../../components/Transition";
+import { techStacks } from "../../Res";
 
 const SwirlTop = () => {
   return (
@@ -41,13 +36,6 @@ const Title = () => {
 const Cards = () => {
   const ref = useHorizontalScroll();
 
-  const techStacks: [string, ReactNode][] = [
-    ["TypeScript", <TypeScriptIcon className="fill-on-primary" />],
-    ["React", <ReactIcon className="fill-on-primary" />],
-    ["Kotlin", <KotlinIcon className="fill-on-primary" />],
-    ["Python", <PythonIcon className="fill-on-primary" />],
-    ["AWS", <AWSIcon className="fill-on-primary" />],
-  ];
   return (
     <div ref={ref} className="overflow-auto whitespace-nowrap py-5 text-center">
       {techStacks.map(([techName, icon], index) => (
@@ -64,11 +52,11 @@ export const TechStackSection = () => {
     <Fragment>
       <div className="relative bg-surface-variant">
         <SwirlTop />
-        <div className="relative z-10">
-          <Transition>
+        <div className="relative z-10 pt-3">
+          <Fade>
             <Title />
             <Cards />
-          </Transition>
+          </Fade>
         </div>
         <SwirlBottom />
       </div>

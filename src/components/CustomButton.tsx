@@ -1,6 +1,11 @@
 import { Fragment, ButtonHTMLAttributes } from "react";
 interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
+/**
+ * A custom button component.
+ *
+ * @component
+ */
 export const CustomButton = (props: CustomButtonProps) => {
   const { children } = props;
   return (
@@ -8,19 +13,19 @@ export const CustomButton = (props: CustomButtonProps) => {
       <button
         {...props}
         className="
-        bg-primary 
-        text-on-primary 
-        text-xl
-        py-1
+        hover:drop-shadow-1xl 
+        rounded-xl 
+        bg-primary
         px-5
-        rounded-xl
+        py-1
+        text-xl
         tracking-wider
+        text-on-primary
         drop-shadow-md
-        hover:drop-shadow-1xl
-        hover:brightness-125
         transition-all
         duration-300
         ease-in-out
+        hover:brightness-125
         "
       >
         {children}

@@ -1,11 +1,15 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, RefObject } from "react";
 
-export function useHorizontalScroll() {
+/**
+ * Custom hook that enables horizontal scrolling for a given element.
+ * @returns {React.RefObject<HTMLDivElement>} The ref object that should be attached to the element.
+ */
+export function useHorizontalScroll(): RefObject<HTMLDivElement> {
   const elRef = useRef();
   useEffect(() => {
     const el = elRef.current as HTMLElement;
     if (el) {
-      const onWheel = (e) => {
+      const onWheel = (e: WheelEvent) => {
         if (el.scrollWidth > el.clientWidth) {
           e.preventDefault();
           el.scrollBy({

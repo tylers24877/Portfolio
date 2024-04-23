@@ -3,6 +3,7 @@ import { Title } from "./components/Title";
 import { CustomButton } from "../../components/CustomButton";
 import { ArrowDown } from "../../components/icons/ArrowDown";
 import { Links } from "./components/Links";
+import { Fade, SlideLeftIn } from "../../components/Transition";
 
 /**
  * Renders the left section of the landing page.
@@ -10,10 +11,7 @@ import { Links } from "./components/Links";
 const LeftSection = () => {
   return (
     <Fragment>
-      <img
-        src="src/assets/landing_photo.jpg"
-        className="h-screen w-full object-cover"
-      />
+      <img src="/landing_photo.jpg" className="h-screen w-full object-cover" />
     </Fragment>
   );
 };
@@ -26,21 +24,31 @@ const RightSection = () => {
     <Fragment>
       <div className="grid h-screen grid-rows-12 py-5">
         <div className="row-start-1 text-center">
-          <Links />
+          <Fade duration="duration-300">
+            <Links />
+          </Fade>
         </div>
         <div className="row-start-3">
-          <Title />
+          <SlideLeftIn duration="duration-300">
+            <Title />
+          </SlideLeftIn>
         </div>
         <div className="row-start-8 text-center">
-          <CustomButton>Contact Me</CustomButton>
+          <Fade duration="duration-300">
+            <CustomButton>Contact Me</CustomButton>
+          </Fade>
         </div>
         <div className="row-start-9 text-center">
-          <div className="pb-1 text-lg">Or</div>
+          <Fade duration="duration-300">
+            <div className="pb-1 text-lg">Or</div>
+          </Fade>
         </div>
         <div className="row-start-10 text-center">
-          <div className="pb-1 text-lg">Scroll to find out more</div>
+          <Fade duration="duration-300">
+            <div className="pb-1 text-lg">Scroll to find out more</div>
 
-          <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary" />
+            <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary" />
+          </Fade>
         </div>
       </div>
     </Fragment>
@@ -55,7 +63,9 @@ export const LandingSection = () => {
     <Fragment>
       <div className="flex">
         <div className="hidden flex-1 sm:block">
-          <LeftSection />
+          <Fade duration="duration-300">
+            <LeftSection />
+          </Fade>
         </div>
         <div className="flex-1">
           <RightSection />

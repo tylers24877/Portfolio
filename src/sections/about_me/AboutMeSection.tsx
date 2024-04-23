@@ -1,7 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 import { AboutMeTitle } from "../../components/AboutMeTitle";
 import { AboutMeBottomSwirl } from "../../components/swirls/AboutMeBottomSwirl";
-import { Transition } from "../../components/Transition";
+import { Fade } from "../../components/Transition";
 
 const SwirlBottom = () => {
   return (
@@ -17,7 +17,7 @@ export const AboutMeSection = () => {
       <div className="md:mt-55 relative mt-[105px] pb-10">
         <div className="flex flex-col px-5 md:flex-row md:px-20">
           <div className="order-2 font-roboto md:order-1 md:w-7/12 md:pr-4">
-            <Transition>
+            <Fade>
               <AboutMeTitle className="mx-auto h-[100px] w-[170px] fill-on-surface" />
               Welcome to my corner of the web! I'm [Your Name], a passionate and
               innovative web developer with a keen eye for design and a love for
@@ -44,16 +44,16 @@ export const AboutMeSection = () => {
               connect and turn your ideas into reality! Welcome to my corner of
               the web! I'm [Your Name], a passionate and innovative web
               developer with a keen eye for design
-            </Transition>
+            </Fade>
           </div>
           <div className="order-1 flex items-center justify-center max-md:pb-4 md:order-2 md:w-5/12 md:pl-4">
-            <Transition>
+            <Fade>
               <img
                 className="mx-auto max-h-[200px] scale-x-[-1] rounded-full outline outline-2 outline-outline-variant drop-shadow-lg md:max-h-[400px]"
-                src="src/assets/profile_photo.jpg"
+                src="/profile_photo.jpg"
                 alt="Profile Photo - Isle of Skye"
               />
-            </Transition>
+            </Fade>
           </div>
         </div>
         <SwirlBottom />

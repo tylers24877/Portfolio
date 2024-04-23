@@ -1,5 +1,8 @@
 import { CustomButton } from "../../../components/CustomButton";
 
+/**
+ * Props for the TechLabel component.
+ */
 interface TechLabelProps {
   name: string;
   className?: string;
@@ -18,31 +21,49 @@ const TechLabel = (props: TechLabelProps) => {
   );
 };
 
-export const ProjectCard = () => {
+/**
+ * Represents the props for the ProjectCard component.
+ */
+export interface ProjectCardProps {
+  title: string;
+  description: string;
+  techStack: string[];
+  liveLink?: string;
+  githubLink?: string;
+}
+
+/**
+ * Renders a project card component.
+ *
+ * @component
+ */
+export const ProjectCard = (props: ProjectCardProps) => {
+  const { title, description, techStack, liveLink, githubLink } = props;
   return (
-    <div className="m-2 flex h-full w-[350px] flex-col items-center justify-between gap-3 rounded-[30px] bg-primary-container px-5 outline outline-2 outline-outline-variant drop-shadow-md">
-      <div className="mt-8 flex-shrink text-5xl text-on-primary-container">
-        test
+    <div className="m-2 flex h-full flex-col items-center justify-between gap-3 rounded-[30px] bg-primary-container px-5 shadow-md shadow-shadow outline outline-1 outline-outline-variant">
+      <div className="mt-8 flex-shrink text-center text-5xl text-on-primary-container">
+        {title}
       </div>
       <div className="w-3/4 flex-shrink border-t border-on-primary-container" />
-      <div className="relative flex items-center gap-2">
-        <TechLabel name="TypeScript" />
-        <TechLabel name="JavaScript" />
-        <TechLabel name="TypeScript" />
+      <div className="relative flex  flex-wrap items-center justify-center gap-2">
+        {techStack.map((tech, index) => (
+          <TechLabel key={index} name={tech} />
+        ))}
       </div>
       <div className="w-full flex-grow items-center justify-center text-center font-roboto  ">
-        The sun dipped low on the horizon, painting the sky in hues of orange
-        and pink. A gentle breeze rustled through the trees, carrying the scent
-        of pine and damp earth. Birds chirped their evening songs as they
-        settled into their nests. In the distance, the sound of a river flowing
-        over smooth rocks provided a soothing backdrop to the peaceful scene. A
-        lone figure sat on a weathered bench, lost in thought, their gaze fixed
-        on the horizon. In that moment, time seemed to stand still, allowing for
-        reflection and introspection in the tranquility of nature's embrace.
+        {description}
       </div>
       <div className="relative flex w-full items-center justify-evenly pb-5">
-        <CustomButton>View Live</CustomButton>
-        <CustomButton>GitHub</CustomButton>
+        {liveLink && (
+          <a href={liveLink} target="_blank">
+            <CustomButton>View Live</CustomButton>
+          </a>
+        )}
+        {githubLink && (
+          <a href={githubLink} target="_blank">
+            <CustomButton>GitHub</CustomButton>
+          </a>
+        )}
       </div>
     </div>
   );
