@@ -2,7 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import { MyProjectsBottomSwirl } from "../../components/swirls/MyProjectsBottomSwirl";
 import { ProjectCard } from "./components/ProjectCard";
 import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
-import { Fade } from "../../components/Transition";
+import { FadeVisible } from "../../components/Transition";
 import { projectList } from "../../Res";
 
 const Title = () => {
@@ -31,7 +31,7 @@ const Projects = () => {
     >
       {projectList.map((item, index) => (
         <div className="break-inside py-2" key={index}>
-          <Fade>
+          <FadeVisible>
             <ProjectCard
               title={item.title}
               description={item.description}
@@ -39,7 +39,7 @@ const Projects = () => {
               liveLink={item.liveLink}
               githubLink={item.githubLink}
             />
-          </Fade>
+          </FadeVisible>
         </div>
       ))}
     </div>

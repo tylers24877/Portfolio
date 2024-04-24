@@ -3,7 +3,9 @@ import { Title } from "./components/Title";
 import { CustomButton } from "../../components/CustomButton";
 import { ArrowDown } from "../../components/icons/ArrowDown";
 import { Links } from "./components/Links";
-import { Fade, SlideLeftIn } from "../../components/Transition";
+import { FadeVisible, SlideLeftInVisible } from "../../components/Transition";
+import { useState } from "react";
+import { ContactForm } from "./components/contact_form/ContactForm";
 
 /**
  * Renders the left section of the landing page.
@@ -20,35 +22,39 @@ const LeftSection = () => {
  * Renders the right section of the landing page.
  */
 const RightSection = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <Fragment>
-      <div className="grid h-screen grid-rows-12 py-5">
-        <div className="row-start-1 text-center">
-          <Fade duration="duration-300">
+      <ContactForm open={open} setOpen={setOpen} />
+      <div className="flex h-screen flex-col">
+        <div className="mt-2 flex-shrink text-center">
+          <FadeVisible duration="duration-300">
             <Links />
-          </Fade>
+          </FadeVisible>
         </div>
-        <div className="row-start-3">
-          <SlideLeftIn duration="duration-300">
+        <div className="flex flex-grow items-center justify-center">
+          <SlideLeftInVisible duration="duration-300">
             <Title />
-          </SlideLeftIn>
+          </SlideLeftInVisible>
         </div>
-        <div className="row-start-8 text-center">
-          <Fade duration="duration-300">
-            <CustomButton>Contact Me</CustomButton>
-          </Fade>
-        </div>
-        <div className="row-start-9 text-center">
-          <Fade duration="duration-300">
-            <div className="pb-1 text-lg">Or</div>
-          </Fade>
-        </div>
-        <div className="row-start-10 text-center">
-          <Fade duration="duration-300">
-            <div className="pb-1 text-lg">Scroll to find out more</div>
-
+        <div className="mb-32 flex flex-shrink flex-col gap-2 text-center md:mb-16">
+          <div className="text-center">
+            <FadeVisible duration="duration-300">
+              <CustomButton onClick={() => setOpen(true)}>
+                Contact Me
+              </CustomButton>
+            </FadeVisible>
+          </div>
+          <div className="text-center">
+            <FadeVisible duration="duration-300">
+              <div className="pb-1 text-lg">Or</div>
+            </FadeVisible>
+          </div>
+          <FadeVisible duration="duration-300">
+            <div className="pb-1 text-2xl">Scroll to find out more</div>
             <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary" />
-          </Fade>
+          </FadeVisible>
         </div>
       </div>
     </Fragment>
@@ -63,9 +69,9 @@ export const LandingSection = () => {
     <Fragment>
       <div className="flex">
         <div className="hidden flex-1 sm:block">
-          <Fade duration="duration-300">
+          <FadeVisible duration="duration-300">
             <LeftSection />
-          </Fade>
+          </FadeVisible>
         </div>
         <div className="flex-1">
           <RightSection />

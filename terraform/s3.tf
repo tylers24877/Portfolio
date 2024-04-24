@@ -10,18 +10,6 @@ resource "aws_s3_bucket_public_access_block" "www" {
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_website_configuration" "www" {
-  bucket = "${var.www_domain_name}"
-
-  index_document {
-    suffix = "index.html"
-  }
-
-  error_document {
-    key = "error.html"
-  }
-}
-
 resource "aws_s3_bucket_policy" "allow_public_read" {
   bucket = "${var.www_domain_name}"
   policy = data.aws_iam_policy_document.allow_public_read.json

@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from "react";
 import { useIsVisible } from "../hooks/Visible";
 
-interface TransitionProps {
+interface VisibleTransitionProps {
   children: ReactNode;
   duration?: string;
 }
@@ -10,7 +10,7 @@ interface TransitionProps {
  *
  * @param props - The transition props.
  */
-export const Fade = (props: TransitionProps) => {
+export const FadeVisible = (props: VisibleTransitionProps) => {
   const { children, duration = "duration-700" } = props;
   const ref = useRef();
   const isVisible = useIsVisible(ref);
@@ -23,7 +23,7 @@ export const Fade = (props: TransitionProps) => {
     </div>
   );
 };
-export const SlideLeftIn = (props: TransitionProps) => {
+export const SlideLeftInVisible = (props: VisibleTransitionProps) => {
   const { children, duration = "duration-700" } = props;
   const ref = useRef();
 
@@ -34,6 +34,21 @@ export const SlideLeftIn = (props: TransitionProps) => {
     <div
       ref={ref}
       className={` transform transition ${duration} ease-in-out sm:duration-700 ${isVisible ? "translate-x-0 translate-y-0 opacity-100" : "translate-x-[-20px] translate-y-[-20px] opacity-0"}`}
+    >
+      {children}
+    </div>
+  );
+};
+interface OnQueTransitionProps {
+  children: ReactNode;
+  duration?: string;
+  inNow: boolean;
+}
+export const FadeOnQue = (props: OnQueTransitionProps) => {
+  const { inNow, children, duration = "duration-700" } = props;
+  return (
+    <div
+      className={`transition-opacity ${duration} ease-in ${inNow ? "opacity-100" : "opacity-0"}`}
     >
       {children}
     </div>

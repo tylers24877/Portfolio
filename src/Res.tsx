@@ -62,3 +62,5 @@ export const projectList: ProjectCardProps[] = [
     liveLink: "https://d29650oo6jvc4g.cloudfront.net/",
   },
 ];
+
+export const aboutMe = "I'm a Software Engineer with a passion for creating software that makes a difference. I have experience in a variety of languages and technologies, including React, TypeScript, Kotlin, Python, and AWS. I'm currently working on a PPE & Loan Management System for the RAF Mountain Rescue Teams. I'm always looking to learn new technologies and improve my skills. Outside of work, I enjoy hiking, photography, and playing the guitar."

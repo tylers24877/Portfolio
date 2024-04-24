@@ -3,7 +3,7 @@ import { TechStackTopSwirl } from "../../components/swirls/TechStackTopSwirl";
 import { Card } from "./components/Card";
 import { TechStackBottomSwirl } from "../../components/swirls/TechStackBottomSwirl";
 import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
-import { Fade } from "../../components/Transition";
+import { FadeVisible } from "../../components/Transition";
 import { techStacks } from "../../Res";
 
 const SwirlTop = () => {
@@ -53,10 +53,10 @@ export const TechStackSection = () => {
       <div className="relative bg-surface-variant">
         <SwirlTop />
         <div className="relative z-10 pt-3">
-          <Fade>
+          <FadeVisible>
             <Title />
             <Cards />
-          </Fade>
+          </FadeVisible>
         </div>
         <SwirlBottom />
       </div>
