@@ -49,7 +49,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "PPE & Loan Management System",
     description:
-      "Still currently in development - My flagship project at the RAF. I've created a PPE & Loan Management System for the RAF Mountain Rescue Teams, which allows PPE inspection records and clothing/ equipment loans to be recorded and tracked. The system is written in React, TypeScript, Node.JS with a database utilising MongoDB. Email and SMS messaging is provided via a government API. The web app frontend is hosted on AWS S3 with Cloudfront for CDN. The backend is located on a EC2 instance(s) with any images produced by a user is saved on an S3 bucket. I've learnt a lot throughout this project and there is areas I wish I did differently, but I have enjoyed the challenge of creating a full stack application.",
+      "Still currently in development - My flagship project at the RAF. I've created a PPE & Loan Management System for the RAF Mountain Rescue Teams, which allows PPE inspection records and clothing/ equipment loans 'to be recorded and tracked. The system is written in React, TypeScript, Node.JS with a database utilising MongoDB. Email and SMS messaging is provided via a government API. The web app frontend is hosted on AWS S3 with Cloudfront for CDN. The backend is located on a EC2 instance(s) with any images produced by a user is saved on an S3 bucket. I've learnt a lot throughout this project and there is areas I wish I did differently, but I have enjoyed the challenge of creating a full stack application.",
     techStack: [
       "React",
       "MongoDB",

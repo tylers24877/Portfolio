@@ -1,6 +1,10 @@
 provider "aws" {
   region = "eu-west-2"
 }
+provider "aws" {
+  alias = "acm"
+  region = "us-east-1"
+}
 // Create a variable for our domain name because we'll be using it a lot.
 variable "www_domain_name" {
   default = "www.tylersimmonds.dev"
@@ -10,3 +14,4 @@ variable "www_domain_name" {
 variable "root_domain_name" {
   default = "tylersimmonds.dev"
 }
+
