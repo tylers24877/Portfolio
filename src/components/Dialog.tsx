@@ -1,24 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
-import { FadeOnQue } from "./Transition";
 import { FormEvent, ReactNode } from "react";
 import { CustomButton } from "./CustomButton";
 import { useDisableScroll } from "../hooks/DisableScroll";
-
-interface CloseButtonProps {
-  setOpen: (open: boolean) => void;
-}
-const CloseButton = (props: CloseButtonProps) => {
-  return (
-    <svg
-      onClick={() => props.setOpen(false)}
-      xmlns="http://www.w3.org/2000/svg"
-      className="hover h-3 w-3 cursor-pointer fill-on-surface-variant "
-      viewBox="0 0 24 24"
-    >
-      <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
-    </svg>
-  );
-};
 
 interface BackdropProps {
   setOpen: (open: boolean) => void;
@@ -41,12 +24,30 @@ const Backdrop = (props: BackdropProps) => {
   );
 };
 
+interface CloseButtonProps {
+  setOpen: (open: boolean) => void;
+}
+const CloseButton = (props: CloseButtonProps) => {
+  return (
+    <svg
+      onClick={() => props.setOpen(false)}
+      xmlns="http://www.w3.org/2000/svg"
+      className="hover h-3 w-3 cursor-pointer fill-on-surface-variant "
+      viewBox="0 0 24 24"
+    >
+      <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+    </svg>
+  );
+};
+
 interface CardProps {
   title: string;
   content: ReactNode;
   setOpen: (open: boolean) => void;
   formId?: string;
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  loading?: boolean;
+  error?: string | null;
 }
 const Card = (props: CardProps) => {
   return (
@@ -62,8 +63,15 @@ const Card = (props: CardProps) => {
             <CloseButton setOpen={props.setOpen} />
           </div>
         </div>
+        {props.error && (
+          <div className="my-2  rounded-md bg-error-container p-1 text-center font-roboto text-error">
+            {props.error}
+          </div>
+        )}
         <div className="flex-grow overflow-auto">{props.content}</div>
-        <CustomButton>Submit</CustomButton>
+        <div className="mt-2">
+          <CustomButton loading={props.loading}>Submit</CustomButton>
+        </div>
       </form>
     </div>
   );
@@ -77,25 +85,30 @@ interface DialogProps {
   closeOnBackDropClick?: boolean;
   formId?: string;
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  loading?: boolean;
+  error?: string | null;
 }
 export const Dialog = (props: DialogProps) => {
   return (
     <Fragment>
       {props.open && (
-        <Backdrop
-          setOpen={props.setOpen}
-          closeOnBackDropClick={props.closeOnBackDropClick}
-        />
+        <Fragment>
+          <Backdrop
+            setOpen={props.setOpen}
+            closeOnBackDropClick={props.closeOnBackDropClick}
+          />
+
+          <Card
+            setOpen={props.setOpen}
+            title={props.title}
+            content={props.children}
+            formId={props.formId}
+            onSubmit={props.onSubmit}
+            loading={props.loading}
+            error={props.error}
+          />
+        </Fragment>
       )}
-      <FadeOnQue inNow={props.open} duration="duration-200">
-        <Card
-          setOpen={props.setOpen}
-          title={props.title}
-          content={props.children}
-          formId={props.formId}
-          onSubmit={props.onSubmit}
-        />
-      </FadeOnQue>
     </Fragment>
   );
 };

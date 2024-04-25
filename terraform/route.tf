@@ -1,9 +1,14 @@
-resource "aws_route53_zone" "default" {
-  name = "tylersimmonds.dev"
+resource "aws_acm_certificate" "default" {
+  provider = aws.acm
+  domain_name = "${var.root_domain_name}"
+  validation_method = "DNS"
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_route53_record" "tylersimmonds-dev" {
-  zone_id = aws_route53_zone.default.zone_id
+  zone_id = "Z055512229OTYTLVF9ER"
   name    = "tylersimmonds.dev"
   type    = "A"
 
@@ -19,7 +24,7 @@ resource "aws_route53_record" "validate" {
       name    = dvo.resource_record_name
       record  = dvo.resource_record_value
       type    = dvo.resource_record_type
-      zone_id = dvo.domain_name == "tylersimmonds.dev" ? aws_route53_zone.default.zone_id : aws_route53_zone.default.zone_id
+      zone_id = "Z055512229OTYTLVF9ER"
     }
   }
 

@@ -5,9 +5,14 @@ interface FormData {
   email: string;
   message: string;
 }
-const useFormSubmit = (initialFormData: FormData, endpoint: string) => {
+const useFormSubmit = (
+  initialFormData: FormData,
+  endpoint: string,
+  closeForm: () => void,
+) => {
   const [formData, setFormData] = useState(initialFormData);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<null | string>(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +25,7 @@ const useFormSubmit = (initialFormData: FormData, endpoint: string) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     try {
       const response = await fetch(endpoint, {
@@ -33,10 +39,10 @@ const useFormSubmit = (initialFormData: FormData, endpoint: string) => {
       if (!response.ok) {
         throw new Error("Failed to submit form");
       }
-
-      console.log("Form submitted successfully");
+      closeForm();
     } catch (error) {
       console.error("Error submitting form:", error.message);
+      setError("Failed to submit form");
     } finally {
       setLoading(false);
     }
@@ -47,6 +53,7 @@ const useFormSubmit = (initialFormData: FormData, endpoint: string) => {
     loading,
     handleChange,
     handleSubmit,
+    error,
   };
 };
 

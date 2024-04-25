@@ -39,18 +39,3 @@ export const SlideLeftInVisible = (props: VisibleTransitionProps) => {
     </div>
   );
 };
-interface OnQueTransitionProps {
-  children: ReactNode;
-  duration?: string;
-  inNow: boolean;
-}
-export const FadeOnQue = (props: OnQueTransitionProps) => {
-  const { inNow, children, duration = "duration-700" } = props;
-  return (
-    <div
-      className={`transition-opacity ${duration} ease-in ${inNow ? "opacity-100" : "opacity-0"}`}
-    >
-      {children}
-    </div>
-  );
-};

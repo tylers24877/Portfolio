@@ -39,7 +39,7 @@ const RightSection = () => {
           </SlideLeftInVisible>
         </div>
         <div className="mb-32 flex flex-shrink flex-col gap-2 text-center md:mb-16">
-          <div className="text-center">
+          <div className="flex justify-center">
             <FadeVisible duration="duration-300">
               <CustomButton onClick={() => setOpen(true)}>
                 Contact Me

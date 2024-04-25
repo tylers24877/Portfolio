@@ -1,8 +1,10 @@
 import { ButtonHTMLAttributes, Fragment, ReactNode } from "react";
+import { Spinner } from "./Spinner";
 
 interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   onClick?: () => void;
+  loading?: boolean;
 }
 /**
  * A custom button component.
@@ -10,15 +12,21 @@ interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * @component
  */
 export const CustomButton = (props: CustomButtonProps) => {
-  const { children, onClick } = props;
+  const { children, onClick, loading } = props;
   return (
     <Fragment>
-      <button
-        {...props}
+      <div className="flex w-full items-center justify-center">
+        <button
+          {...props}
+          disabled={loading}
+          onClick={onClick}
+          className="
         onClick={onClick}
-        className="
-        hover:drop-shadow-1xl 
-        onClick={onClick} 
+        flex
+        min-h-10 
+        w-full
+        items-center
+        justify-center 
         rounded-xl
         bg-primary
         px-5
@@ -29,10 +37,12 @@ export const CustomButton = (props: CustomButtonProps) => {
         drop-shadow-md
         transition-all
         duration-300
-        ease-in-out hover:brightness-125"
-      >
-        {children}
-      </button>
+        ease-in-out hover:enabled:brightness-125 hover:enabled:drop-shadow-xl
+        disabled:opacity-50"
+        >
+          {loading ? <Spinner /> : children}
+        </button>
+      </div>
     </Fragment>
   );
 };
