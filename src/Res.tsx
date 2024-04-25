@@ -28,7 +28,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "Portfolio Website",
     description:
-      "You're at it now! A personal portfolio website showcasing my projects and experience. The Design was created using Figma and I developed the website using React, Typescript, and Tailwind CSS. Hosted on AWS S3 with CloudFront for CDN.",
+      "You're at it now! A personal portfolio website showcasing my projects and experience. The Design was created using Figma and I then developed the website using React, Typescript, and Tailwind CSS.\nHosted on AWS S3 with CloudFront for CDN, Route 53 for DNS and a Python Lambda function connected to a SNS for the contact form. The infrastructure is fully deployed using Terraform.",
     buttons: [
       { url: "https://github.com/tylers24877/portfolio", text: "Github" },
     ],
@@ -37,7 +37,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "Sarcall Alarm",
     description:
-      "Previously written in Java, before moving to Kotlin. SARCALL Alarm is an Android application in use by the RAF and UK Mountain Rescue Teams to trigger an alarm on response to a callout sent via SMS. In addition to this, users are able to sign on and off and notify the team of their status on the way to a job. The app is in use by team members across the UK and has been used in real-life scenarios, speeding up response times of UK Mountain Rescue Teams.",
+      "Previously written in Java, before moving to Kotlin. SARCALL Alarm is an Android application in use by the RAF and UK Mountain Rescue Teams to trigger an alarm on their phone (even during silent/ DnD) in response to a callout sent via SMS. In addition to this, users are able to sign on and off and notify the team of their status on the way to a tasking. The app is in use by team members across the UK and has been used in many real-life scenarios, speeding up response times of UK Mountain Rescue Teams.\nThroughout development challenges faces were adapting to the restrictions imposed by Android with detecting SMS messages and allowing an alarm to activate at anytime.\n\nThe app has been commended by the Station Commander RAF Leeming for its impact on enhancing team communication and coordination in life-threatening situations.",
     techStack: ["Android", "Kotlin", "Java"],
     buttons: [
       {
@@ -50,7 +50,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "GPS Tracking Service",
     description:
-      "A GPS Tracking service written using Python which processes NMEA location data from a GPS device and forwards the processed data an API endpoint belonging to an asset tracking system within the UK Mountain Rescue. This allows a team to track the location of the GPS device in near real time, ensuring safety of team members.",
+      "Having noticed a flaw with no tracking in the RAF MRS vehicles I decided to design and create a python application which is installed pre-existing computer embedded on the vehicle. This is then fed data from a GPS device, processes the data which is in NMEA format, then pushes the formatted data to an API endpoint. This endpoint is operated by an asset tracking system used within the UK Mountain Rescue.\n\nNow the tracking problem is solved, RAF MRS can now track the location of the vehicles ensuring safety of team members using them.",
     techStack: ["Python"],
     buttons: [
       {
@@ -62,7 +62,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "Police Crime Map",
     description:
-      "As part of a small coding project in the RAF, I created a React Website that visualised data from the UK Police API. The website allows users to search for crimes within 1 mile of a postcode and view the data on a map. The website was created using React, TypeScript, Material-UI and MapBox API which is then hosted on AWS S3 with CloudFront for CDN.",
+      "As part of a small coding project in the RAF, I created a React Web App that visualises data from a UK Police Crime API. The website allows users to quickly search for crimes within 1 mile of a postcode and view the data on a map. The website was created using React, TypeScript, Material-UI and MapBox API which is then hosted on AWS S3 with CloudFront for CDN.\nThis was a fun mini project to work on, it was great to have a go using MapBox for mapping.",
     techStack: ["React", "TypeScript", "Material-UI"],
     buttons: [
       {
@@ -75,7 +75,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "PPE & Loan Management System",
     description:
-      "Still currently in development. I've created a PPE & Loan Management System for the RAF Mountain Rescue Teams, which allows PPE inspection records and clothing/ equipment loans 'to be recorded and tracked. The system is written in React, TypeScript, Node.JS with a database utilising MongoDB. Email and SMS messaging is provided via a government API. The web app frontend is hosted on AWS S3 with Cloudfront for CDN. The backend is located on a EC2 instance(s) with any images produced by a user is saved on an S3 bucket. I've learnt a lot throughout this project and there is areas I wish I did differently, but I have enjoyed the challenge of creating a full stack application.\n\nPlease request a demo of the application! Login details are:\n\nEmail: demo@demo.co.uk\nPassword: demo1234\n\nPlease note that this is the dev environment and may contain bugs.",
+      "Still currently in development. I've created a PPE & Loan Management System for the RAF Mountain Rescue Teams, which allows PPE inspection records and clothing / equipment loans 'to be recorded and tracked. The system is written in React, TypeScript, Node.JS with a database utilising MongoDB. Email and SMS messaging is provided via a government API. The web app frontend is hosted on AWS S3 with Cloudfront for CDN. The backend is located on a EC2 instance(s) with any images produced by a user is saved on an S3 bucket. I've learnt a lot throughout this project and there is areas I wish I did differently, but I have enjoyed the challenge of creating a full stack application.\n\nPlease contact me for a demo.",
     techStack: [
       "React",
       "MongoDB",
@@ -85,10 +85,6 @@ export const projectList: ProjectCardProps[] = [
       "AWS",
     ],
     buttons: [
-      {
-        url: "https://dev.supply.rafmrs.uk/",
-        text: "View Demo",
-      },
       {
         url: "/screenshot/ppe-loan-management-system.png",
         text: "Screenshot",
