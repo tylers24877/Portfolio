@@ -2,7 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import { TechStackTopSwirl } from "../../components/swirls/TechStackTopSwirl";
 import { Card } from "./components/Card";
 import { TechStackBottomSwirl } from "../../components/swirls/TechStackBottomSwirl";
-import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
+import { useHorizontalScroll } from "../../hooks/HorizontalScroll";
 import { FadeVisible } from "../../components/Transition";
 import { techStacks } from "../../Res";
 

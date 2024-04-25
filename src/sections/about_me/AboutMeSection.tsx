@@ -17,7 +17,7 @@ export const AboutMeSection = () => {
     <Fragment>
       <div className="md:mt-55 relative mt-[105px] pb-10">
         <div className="flex flex-col px-5 md:flex-row md:px-20">
-          <div className="order-2 font-roboto md:order-1 md:w-7/12 md:pr-4">
+          <div className="order-2 whitespace-pre-line font-roboto md:order-1 md:w-7/12 md:pr-4">
             <FadeVisible>
               <AboutMeTitle className="mx-auto h-[100px] w-[170px] fill-on-surface" />
               {aboutMe}

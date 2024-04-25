@@ -24,7 +24,9 @@ export const FooterSection = () => {
           This work is open source on{" "}
           <FooterLink href="https://github.com/tylers24877">GitHub</FooterLink>{" "}
           | Built with <FooterLink href="https://react.dev/">React</FooterLink>{" "}
-          and <FooterLink href="https://tailwindcss.com/">Tailwind</FooterLink>
+          and <FooterLink href="https://tailwindcss.com/">Tailwind</FooterLink>{" "}
+          with icons from{" "}
+          <FooterLink href="https://icons8.com/">Icons8</FooterLink>
           <br />
           On the ☁︎ at{" "}
           <FooterLink href="https://aws.amazon.com/">AWS</FooterLink>

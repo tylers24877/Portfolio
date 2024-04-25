@@ -1,7 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 import { MyProjectsBottomSwirl } from "../../components/swirls/MyProjectsBottomSwirl";
 import { ProjectCard } from "./components/ProjectCard";
-import { useHorizontalScroll } from "../../hooks/HorizontialScroll";
+import { useHorizontalScroll } from "../../hooks/HorizontalScroll";
 import { FadeVisible } from "../../components/Transition";
 import { projectList } from "../../Res";
 
@@ -33,11 +33,7 @@ const Projects = () => {
         <div className="break-inside py-2" key={index}>
           <FadeVisible>
             <ProjectCard
-              title={item.title}
-              description={item.description}
-              techStack={item.techStack}
-              liveLink={item.liveLink}
-              githubLink={item.githubLink}
+              item={item}
             />
           </FadeVisible>
         </div>
