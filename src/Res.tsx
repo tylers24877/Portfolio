@@ -10,6 +10,7 @@ import { TerraformIcon } from "./components/icons/tech_stack/Terraform";
 export const socialLinks = [
   ["GitHub", "https://github.com/tylers24877"],
   ["LinkedIn", "https://www.linkedin.com/in/tyler-simmonds-327a861a7/"],
+  ["CV", "/Tyler_Simmonds_CV.pdf"],
 ];
 
 export const techStacks: [string, ReactNode][] = [
@@ -94,7 +95,7 @@ export const projectList: ProjectCardProps[] = [
   {
     title: "Team Leader App",
     description:
-      "I've built and android app which solves a few issues team leaders of the RAF MRS were facing on a daily basis. I noticed that during a callout, they'd need to login to a online system with a username and password and click a total of 6 buttons to call the team out. I was able to solve this with a simple button press they're able to automatically call the team out on a time critical job.\n\nI also noticed that during due to a restriction in mass sms messaging, the team couldn't send sms messages to all team members easily. I solved this by implementing Gov.UK Notify API within the app, allowing the team leader to send a message to all team members with a few button presses.\n\nThe app is currently in use by the RAF MRS and has been well received by the team leaders.",
+      "I've built an Android app that solves a few issues team leaders of the RAF MRS were facing on a daily basis. I noticed that during a callout, they'd need to log in to an online system with a username and password and click a total of 6 buttons to call the team out. I was able to solve this with a simple button press, enabling them to automatically call the team out on time-critical jobs.\n\nI also noticed that due to a restriction in mass SMS messaging, the team couldn't send SMS messages to all team members easily. I solved this by implementing the Gov.UK Notify API within the app, allowing the team leader to send a message to all team members with just a few button presses.\n\nThe app is currently in use by the RAF MRS and has been well received by the team leaders.",
     techStack: ["Kotlin"],
     buttons: [],
   },
