@@ -23,10 +23,10 @@ const SwirlBottom = () => {
 const Title = () => {
   return (
     <Fragment>
-      <div className="text-center text-7xl leading-none text-on-surface">
+      <div className="font-justAnotherHand text-center text-7xl leading-none text-on-surface">
         Tech Stacks
       </div>
-      <div className="text-center text-2xl leading-none text-on-surface">
+      <div className="text-l text-center leading-none text-on-surface-variant">
         which I use the most
       </div>
     </Fragment>

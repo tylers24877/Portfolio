@@ -7,7 +7,7 @@ import { projectList } from "../../Res";
 
 const Title = () => {
   return (
-    <div className="me-8 text-right text-6xl md:me-52 md:text-7xl  xl:me-[250px] 2xl:me-[500px]">
+    <div className="font-justAnotherHand me-8 text-right text-6xl md:me-32 lg:me-72 md:text-7xl xl:me-[250px] 2xl:me-[500px]">
       My Projects
     </div>
   );
@@ -32,9 +32,7 @@ const Projects = () => {
       {projectList.map((item, index) => (
         <div className="break-inside py-2" key={index}>
           <FadeVisible>
-            <ProjectCard
-              item={item}
-            />
+            <ProjectCard item={item} />
           </FadeVisible>
         </div>
       ))}

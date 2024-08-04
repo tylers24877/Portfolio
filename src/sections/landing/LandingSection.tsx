@@ -48,11 +48,11 @@ const RightSection = () => {
           </div>
           <div className="text-center">
             <FadeVisible duration="duration-300">
-              <div className="pb-1 text-lg">Or</div>
+              <div className="pb-1">Or</div>
             </FadeVisible>
           </div>
           <FadeVisible duration="duration-300">
-            <div className="pb-1 text-2xl">Scroll to find out more</div>
+            <div className="pb-3">Scroll to find out more</div>
             <ArrowDown className="mx-auto size-14 animate-bounce fill-secondary" />
           </FadeVisible>
         </div>

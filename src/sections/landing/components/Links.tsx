@@ -10,17 +10,17 @@ export const Links = () => {
     <Fragment>
       <div className="flex">
         {socialLinks.map(([name, link]) => (
-          <div className="flex flex-1 flex-col items-center justify-center">
+          <div className="flex flex-1 flex-col items-center justify-center ">
             <a
               href={link}
               target="_blank"
-              className="text-xl hover:drop-shadow-md md:text-2xl"
+              className="text-center hover:drop-shadow-md"
             >
               {name}
             </a>
           </div>
         ))}
-        <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center px-3">
           <DarkModeSwitch />
         </div>
       </div>

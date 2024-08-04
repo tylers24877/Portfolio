@@ -11,7 +11,7 @@ const TechLabel = (props: TechLabelProps) => {
   const { name } = props;
   return (
     <div
-      className={`w-fit rounded-full bg-tertiary-container p-1 px-5 text-center font-roboto leading-none tracking-wider text-on-tertiary-container shadow-sm outline outline-outline-variant`}
+      className={`w-fit rounded-full bg-tertiary-container p-1 px-5 text-center leading-none text-on-tertiary-container`}
     >
       {name}
     </div>
@@ -37,7 +37,7 @@ export const ProjectCard = ({ item }: { item: ProjectCardProps }) => {
   const { title, description, techStack, buttons } = item;
   return (
     <div className="m-2 flex h-full flex-col items-center justify-between gap-3 rounded-[30px] bg-primary-container px-5 shadow-md shadow-shadow outline outline-1 outline-outline-variant">
-      <div className="mt-8 flex-shrink text-center text-5xl text-on-primary-container">
+      <div className="mt-8 flex-shrink text-center text-2xl text-on-primary-container">
         {title}
       </div>
       <div className="w-3/4 flex-shrink border-t border-on-primary-container" />
@@ -46,7 +46,7 @@ export const ProjectCard = ({ item }: { item: ProjectCardProps }) => {
           <TechLabel key={index} name={tech} />
         ))}
       </div>
-      <div className="w-full flex-grow items-center justify-center whitespace-pre-line text-center font-roboto  ">
+      <div className="w-full flex-grow items-center justify-center text-center">
         {description}
       </div>
       <div className="relative flex w-full flex-wrap items-center justify-evenly gap-2 pb-5">

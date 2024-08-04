@@ -20,7 +20,7 @@ export const FooterSection = () => {
   return (
     <Fragment>
       <div className="flex h-[200px] w-full items-end justify-center bg-secondary pb-8">
-        <div className="text-center text-xl tracking-wider text-on-secondary">
+        <div className="text-center tracking-wider text-on-secondary">
           This work is open source on{" "}
           <FooterLink href="https://github.com/tylers24877">GitHub</FooterLink>{" "}
           | Built with <FooterLink href="https://react.dev/">React</FooterLink>{" "}

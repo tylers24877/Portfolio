@@ -40,13 +40,13 @@ export const ContactForm = (props: ContactFormProps) => {
       >
         <div>
           <div className="text-lg">
-            <div className="flex flex-col gap-5 font-roboto">
-              <div className="mx-1">
+            <div className="flex flex-col gap-5">
+              <div className="ml-1 mr-5">
                 Feel free to contact me using this form below. I'll get back to
                 you as soon as I can!
               </div>
               <div className="mt-5 flex flex-col gap-1 md:flex-row md:items-center md:justify-center md:gap-10">
-                <div className="ml-1">Name:</div>
+                <div className="ml-1 w-14">Name:</div>
                 <input
                   name="name"
                   value={formData.name}
@@ -57,7 +57,7 @@ export const ContactForm = (props: ContactFormProps) => {
                 />
               </div>
               <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-center md:gap-10">
-                <div className="ml-1">Email:</div>
+                <div className="ml-1 w-14">Email:</div>
                 <input
                   name="email"
                   value={formData.email}

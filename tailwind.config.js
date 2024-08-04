@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        justAnotherHand: ["Just Another Hand", "cursive"],
       },
       colors: {
         primary: "rgb(var(--md-sys-color-primary) / <alpha-value>)",

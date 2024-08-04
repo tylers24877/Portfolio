@@ -21,7 +21,6 @@ export const CustomButton = (props: CustomButtonProps) => {
           disabled={loading}
           onClick={onClick}
           className="
-        onClick={onClick}
         flex
         min-h-10 
         w-full
@@ -31,8 +30,6 @@ export const CustomButton = (props: CustomButtonProps) => {
         bg-primary
         px-5
         py-1
-        text-xl
-        tracking-wider
         text-on-primary
         drop-shadow-md
         transition-all
